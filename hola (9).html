@@ -1,0 +1,165 @@
+<!DOCTYPE html><html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manos UY</title>
+  <style>
+    body {
+      font-family: 'Garamond', serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #dfe9f3, #ffffff);
+    }
+    header {
+      background: #333;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 1.2em;
+      margin-top: 0;
+    }
+    .selector {
+      display: flex;
+      justify-content: center;
+      margin-top: 40px;
+    }
+    .selector button {
+      padding: 15px 30px;
+      margin: 15px;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 8px;
+      background: #1976d2;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .selector button:hover {
+      background: #125ca1;
+    }
+    .ilustracion {
+      text-align: center;
+      margin-top: 40px;
+    }
+    .ilustracion img {
+      max-width: 90%;
+      height: auto;
+      border-radius: 15px;
+    }
+    .formulario {
+      display: none;
+      max-width: 600px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .formulario.active {
+      display: block;
+    }
+    .formulario h2 {
+      margin-bottom: 20px;
+      color: #1976d2;
+    }
+    .formulario label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    .formulario input,
+    .formulario select,
+    .formulario textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .formulario button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #1976d2;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    footer {
+      background: #f1f1f1;
+      color: #555;
+      text-align: center;
+      padding: 20px;
+      margin-top: 50px;
+    }
+  </style>
+  <script>
+    function mostrarFormulario(tipo) {
+      document.querySelector('.formulario').classList.add('active');
+      document.querySelector('#tituloFormulario').innerText = tipo === 'profesional' ? 'Registro Profesional' : 'Registro Cliente';
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>Manos UY</h1>
+    <p>Conectamos profesionales con quienes necesitan sus servicios</p>
+  </header>
+  <main>
+    <div class="selector">
+      <button onclick="mostrarFormulario('profesional')">Soy Profesional</button>
+      <button onclick="mostrarFormulario('cliente')">Busco Profesional</button>
+    </div>
+    <div class="ilustracion">
+      <img src="https://i.imgur.com/YjsJgPb.png" alt="Ilustración con macaquitos y casa" />
+    </div>
+    <div class="formulario">
+      <h2 id="tituloFormulario">Formulario</h2>
+      <label>Nombre completo:</label>
+      <input type="text" placeholder="Juan Pérez" /><label>Email:</label>
+  <input type="email" placeholder="correo@ejemplo.com" />
+
+  <label>Teléfono:</label>
+  <input type="tel" placeholder="099123456" />
+
+  <label>Contraseña:</label>
+  <input type="password" placeholder="••••••••" />
+
+  <label>Departamento:</label>
+  <select>
+    <option>Montevideo</option>
+    <option>Canelones</option>
+    <option>Maldonado</option>
+    <option>Otros...</option>
+  </select>
+
+  <label>Oficio 1:</label>
+  <input type="text" placeholder="Ej: Albañil" />
+
+  <label>Oficio 2 (opcional):</label>
+  <input type="text" placeholder="Ej: Pintor" />
+
+  <label>Foto de perfil:</label>
+  <input type="file" />
+
+  <label>Fotos de trabajos (puede subir varias):</label>
+  <input type="file" multiple />
+
+  <label>Descripción:</label>
+  <textarea placeholder="Contá un poco sobre tu experiencia..." rows="5"></textarea>
+
+  <button>Registrarse</button>
+</div>
+
+  </main>
+  <footer>
+    <p>&copy; 2025 Manos UY M&M</p>
+  </footer>
+</body>
+</html>
